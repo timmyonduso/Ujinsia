@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "594709436793",
+    "project_id": "ujinsia-f0554",
+    "storage_bucket": "ujinsia-f0554.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594709436793:android:3be31bcc23baae06ff37a8",
+        "android_client_info": {
+          "package_name": "com.example.ujinsia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594709436793-s56p3b5pqf5a2svlshgvo1qrhqvvkmq7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQX99DGGX7hu0100tcgcAk9ANYuZJXk14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594709436793-s56p3b5pqf5a2svlshgvo1qrhqvvkmq7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

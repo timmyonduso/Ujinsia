@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ujinsia</string>
+    <string name="Homee">Home</string>
+    <string name="Settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="HomeFragment">Home Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="SettingsFragment">Settings Fragment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="switch_theme">Choose theme</string>
+    <string name="Welcome">Welcome</string>
+    <string name="menu">Close Menu</string>
+
+</resources>
