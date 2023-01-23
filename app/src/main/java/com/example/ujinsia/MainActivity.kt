@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.Switch
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -74,7 +73,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 private val items = listOf(
-    Item("Get aid", R.drawable.ic_baseline_report_24,"Submit a confidential report", GetAidActivity::class.java),
+    Item("Get aid", R.drawable.download22,"Submit a confidential report", GetAidActivity::class.java),
     Item("Learn more", R.drawable.ic_baseline_menu_book_24,"Increase your GBV awareness",LearnActivity::class.java),
     Item("Get help from professionals", R.drawable.ic_baseline_person_pin_24,"Receive certified information from veterans",ConnectActivity::class.java),
     Item("Locate nearest help center", R.drawable.ic_baseline_location_on_24,"Pinpoint available support", MainActivity::class.java)
@@ -110,6 +109,11 @@ private val items = listOf(
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
         R.id.Homie -> {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            return true
+        }
+        R.id.about -> {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             return true

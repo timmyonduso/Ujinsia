@@ -7,10 +7,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="SettingsFragment">Settings Fragment</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="AboutFragment">About Fragment</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="switch_theme">Choose theme</string>
     <string name="Welcome">Welcome</string>
     <string name="menu">Close Menu</string>
+    <string name="about">About</string>
 
 </resources>
