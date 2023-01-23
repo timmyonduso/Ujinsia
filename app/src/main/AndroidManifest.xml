@@ -16,6 +16,9 @@
         android:theme="@style/Theme.UJINSIA"
         tools:targetApi="31">
         <activity
+            android:name=".LocatorActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutActivity"
             android:exported="false" />
         <activity
@@ -57,7 +60,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

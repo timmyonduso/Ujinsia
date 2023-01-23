@@ -76,7 +76,7 @@ private val items = listOf(
     Item("Get aid", R.drawable.download22,"Submit a confidential report", GetAidActivity::class.java),
     Item("Learn more", R.drawable.ic_baseline_menu_book_24,"Increase your GBV awareness",LearnActivity::class.java),
     Item("Get help from professionals", R.drawable.ic_baseline_person_pin_24,"Receive certified information from veterans",ConnectActivity::class.java),
-    Item("Locate nearest help center", R.drawable.ic_baseline_location_on_24,"Pinpoint available support", MainActivity::class.java)
+    Item("Locate nearest help center", R.drawable.ic_baseline_location_on_24,"Pinpoint available support", LocatorActivity::class.java)
 )
 
 
@@ -114,7 +114,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
             return true
         }
         R.id.about -> {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
             return true
         }
@@ -148,6 +148,11 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
             R.id.Homie -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
+                return true
             }
             R.id.Setto -> {
                 val intent = Intent(this, LoginActivity::class.java)

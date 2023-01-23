@@ -6,8 +6,9 @@
 
     <item android:id="@+id/menu_navigation"
         android:icon="@drawable/ic_baseline_menu_open_24"
-        android:title="@string/menu"
+        android:title=""
         app:showAsAction="always"
+        android:visible="false"
 
         />
 
@@ -18,9 +19,8 @@
 
     <item
         android:id="@+id/about"
-        android:icon="@drawable/ic_baseline_highlight_24"
+        android:icon="@drawable/ic_baseline_info_24"
         android:title="@string/about"
-        app:actionViewClass="android.widget.Switch"
         />
 
     <item android:id="@+id/Setto"
