@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context=".GetAidActivity">
+    android:background="#949DCD"
+    tools:context=".CCSContactActivity">
+
 <androidx.drawerlayout.widget.DrawerLayout
 android:id="@+id/drawer_layout"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:fitsSystemWindows="true"
 tools:openDrawer="start"
-tools:context=".GetAidActivity">
-
+tools:context=".CCSContactActivity">
 
     <include layout="@layout/toolbar" />
 
@@ -27,16 +27,38 @@ tools:context=".GetAidActivity">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".GetAidActivity"
+        android:padding="16dp"
+        tools:context=".CCSContactActivity"
         android:layout_marginTop="50dp">
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/listView"
-            >
+        <TextView
+            android:id="@+id/county_label"
+            android:layout_width="168dp"
+            android:layout_height="40dp"
+            android:text="@string/County"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        </ListView>
+        <Spinner
+            android:id="@+id/county_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/contact_details_label"
+            android:layout_width="184dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/ContactDetails"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/contact_details_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

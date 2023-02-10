@@ -8,21 +8,20 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Switch
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-
+    private lateinit var bottomNavigationView : BottomNavigationView
     private lateinit var drawer: DrawerLayout
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
@@ -32,11 +31,35 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//bottom navbar
+        bottomNavigationView = findViewById(R.id.bottomNav)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.connect -> {
+                    // Handle the "Home" action
+                    val intent = Intent(this, ConnectActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.infooo -> {
+                    // Handle the "Search" action
+                    val intent = Intent(this, LearnActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.Bulletin -> {
+                    // Handle the "Settings" action
+                    val intent = Intent(this, LearnActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
 
-//        val color = ContextCompat.getColor(this, R.color.main)
-//        window.decorView.setBackgroundColor(color)
 
 
+//code for toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -47,7 +70,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
-
+//Navigation drawer
         drawer = this.findViewById(R.id.drawer_layout)
         val toggle = ActionBarDrawerToggle(this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer.addDrawerListener(toggle)
@@ -57,6 +80,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
 
+//Home Page layout initialization
         viewManager = LinearLayoutManager(this)
         viewAdapter = MyAdapter(items, this)
 
@@ -66,45 +90,41 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             adapter = viewAdapter
         }
 
+
+        //Status bar Colour
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.statusBarColor = ContextCompat.getColor(this, R.color.primary)
         }
 
     }
 
+
+
+
 private val items = listOf(
-    Item("Get aid", R.drawable.download22,"Submit a confidential report", GetAidActivity::class.java),
-    Item("Learn more", R.drawable.ic_baseline_menu_book_24,"Increase your GBV awareness",LearnActivity::class.java),
-    Item("Get help from professionals", R.drawable.ic_baseline_person_pin_24,"Receive certified information from veterans",ConnectActivity::class.java),
-    Item("Locate nearest help center", R.drawable.ic_baseline_location_on_24,"Pinpoint available support", LocatorActivity::class.java)
+//    <a target="_blank" href="https://icons8.com/icon/34998/choice">Choice</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    Item("Get aid", R.drawable.anrepoti,"Submit a confidential report", GetAidActivity::class.java),
+//    <a target="_blank" href="https://icons8.com/icon/114259/school">School</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    Item("Learn more", R.drawable.kitabu,"Increase your GBV awareness",LearnActivity::class.java),
+//    <a target="_blank" href="https://icons8.com/icon/xx3TVZuDK27S/messages">Messages</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    Item("Get help from professionals", R.drawable.messagess,"Receive certified information from veterans",ConnectActivity::class.java),
+//    <a target="_blank" href="https://icons8.com/icon/60301/europe">Europe</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    Item("Locate nearest help center", R.drawable.locashen,"Pinpoint available support", LocatorActivity::class.java)
 )
 
 
-    //     look at this section
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.my_menu,menu)
-        val switch = menu?.findItem(R.id.switch_theme)?.actionView as Switch
-        switch.isChecked = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
-
-//        switch.setOnCheckedChangeListener { _, isChecked ->
-//            if (isChecked) {
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//            } else {
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//            }
-//            recreate()
+//    Menu items inflater
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        val inflater: MenuInflater = menuInflater
+//        inflater.inflate(R.menu.my_menu,menu)
 //
-//        }
-
-        return super.onCreateOptionsMenu(menu)
-
-    }
+//        return super.onCreateOptionsMenu(menu)
+//
+//    }
 
 
 
-//     look at this section
+//     Menu items click listener
 @SuppressLint("UseSwitchCompatOrMaterialCode")
 override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
@@ -123,25 +143,22 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
             startActivity(intent)
             return true
         }
-        R.id.switch_theme -> {
-            // Handle the switch button click
-
-        }
-        R.id.menu_navigation -> {
+        R.id.nav_view -> {
             val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
             drawerLayout.openDrawer(GravityCompat.START)
-
-
         }
-
+//        R.id.switch_theme -> {
+//            // Handle the switch button click
+//
+//        }
 
         else -> return super.onOptionsItemSelected(item)
     }
-    drawer.closeDrawer(GravityCompat.START)
+    drawer.closeDrawer(GravityCompat.END)
     return true
 }
 
-
+//Navigation drawer click listener
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -155,13 +172,13 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, UserProfileActivity::class.java)
                 startActivity(intent)
             }
-            R.id.switch_theme -> {
-                // Handle the switch button click
-
-            }
+//            R.id.switch_theme -> {
+//                // Handle the switch button click
+//
+//            }
 
         }
 
@@ -171,11 +188,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+        finish()
     }
 }
 

@@ -1,5 +1,6 @@
 package com.example.ujinsia
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +8,7 @@ import android.os.Handler
 import android.view.WindowManager
 
 
+@SuppressLint("CustomSplashScreen")
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,5 +29,6 @@ class SplashScreen : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, 3000) // 3000 is the delayed time in milliseconds.
+
     }
 }

@@ -11,9 +11,9 @@ import com.google.firebase.auth.FirebaseAuth
 
 class SignupActivity : AppCompatActivity() {
 
+    private var regName: EditText? = null
     private var regEmail: EditText? = null
     private var regPassword: EditText? = null
-    private var confirmPassword: EditText? = null
     private var loginHere: TextView? = null
     private var register: Button? = null
     private var mAuth: FirebaseAuth? = null
@@ -23,9 +23,9 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
+        regName = findViewById(R.id.inputName)
         regEmail = findViewById(R.id.inputemail)
         regPassword = findViewById(R.id.inputpassword)
-        confirmPassword = findViewById(R.id.confirm_password)
         loginHere = findViewById(R.id.loginInstead)
         register = findViewById(R.id.btn_signup)
 
@@ -41,10 +41,16 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun createUser(){
+
+        val name = regName!!.text.toString().trim()
         val email = regEmail!!.text.toString().trim()
         val password = regPassword!!.text.toString().trim()
 
-        if (email.isEmpty()){
+
+        if (name.isEmpty()){
+            regName!!.error = "Please provide your full name"
+            regName!!.requestFocus()
+        } else if (email.isEmpty()){
             regEmail!!.error = "Email cannot be empty"
             regEmail!!.requestFocus()
         }else if(password.isEmpty()){

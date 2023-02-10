@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity() {
     private var loginEmail: EditText? = null
     private var loginPassword: EditText? = null
-    private var registerhere: TextView? = null
+    private var registerhere: Button? = null
     private var buttonlogin: Button? = null
     private var mAuth: FirebaseAuth? = null
 
@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginEmail = findViewById(R.id.inputemail)
         loginPassword = findViewById(R.id.inputpassword)
-        registerhere = findViewById(R.id.gotoRegister)
+        registerhere = findViewById(R.id.gotoRegister2)
         buttonlogin = findViewById(R.id.btn_login)
 
         mAuth = FirebaseAuth.getInstance()
@@ -66,5 +66,3 @@ class LoginActivity : AppCompatActivity() {
     }
 
 }
-
-

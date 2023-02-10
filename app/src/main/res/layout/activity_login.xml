@@ -16,8 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.008"
-        app:srcCompat="@drawable/ic_baseline_person_pin_24"
-        />
+        app:srcCompat="@drawable/community22" />
 
     <EditText
         android:id="@+id/inputemail"
@@ -76,21 +75,36 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/gotoRegister"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="128dp"
-        android:text="Register New Account"
+        android:text="Dont have an account?"
         android:textColor="@color/primary"
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.191" />
+
+
+    <Button
+        android:id="@+id/gotoRegister2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register New Account"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.227" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

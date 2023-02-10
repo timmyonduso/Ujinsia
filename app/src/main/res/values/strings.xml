@@ -16,5 +16,13 @@
     <string name="Welcome">Welcome</string>
     <string name="menu">Close Menu</string>
     <string name="about">About</string>
+    <string name="Connect">Connect</string>
+    <string name="Hub">Information Hub</string>
+    <string name="Bulletin">Bulletin</string>
+    <string name="County">County:</string>
+    <string name="ContactDetails">Contact Details:</string>
+    <string name="FullName">Full Name</string>
+    <string name="Emaheil">Email</string>
+
 
 </resources>
