@@ -5,8 +5,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -159,7 +157,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
 }
 
 //Navigation drawer click listener
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.Homie -> {
@@ -172,13 +170,9 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, UserProfileActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
             }
-//            R.id.switch_theme -> {
-//                // Handle the switch button click
-//
-//            }
 
         }
 

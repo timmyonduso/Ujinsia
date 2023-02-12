@@ -27,6 +27,11 @@ android {
 
         }
     }
+
+    buildFeatures{
+        viewBinding true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -43,30 +48,36 @@ android {
             keyPassword "key_password"
         }
     }
+    namespace 'com.example.ujinsia'
 }
 
 dependencies {
 
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-
     // for adding recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     // for adding cardview
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
     //drawer layout
     implementation 'com.google.android.material:material:1.9.0-alpha01'
     //Firebase
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.2'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.3'
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-auth:21.1.0'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+
+    //Progress Dialog library
+    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
+
 
     // Import the Firebase BoM
 //    implementation platform('com.google.firebase:firebase-bom:31.2.0')

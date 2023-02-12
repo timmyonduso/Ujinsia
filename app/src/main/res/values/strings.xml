@@ -23,6 +23,7 @@
     <string name="ContactDetails">Contact Details:</string>
     <string name="FullName">Full Name</string>
     <string name="Emaheil">Email</string>
+    <string name="please_wait">Please wait...</string>
 
 
 </resources>
