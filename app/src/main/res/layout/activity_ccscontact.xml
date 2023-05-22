@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,70 +8,97 @@
     android:background="#949DCD"
     tools:context=".CCSContactActivity">
 
-<androidx.drawerlayout.widget.DrawerLayout
-android:id="@+id/drawer_layout"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:fitsSystemWindows="true"
-tools:openDrawer="start"
-tools:context=".CCSContactActivity">
-
-    <include layout="@layout/toolbar" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
-
-    <LinearLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:context=".CCSContactActivity"
-        android:layout_marginTop="50dp">
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start"
+        tools:context=".CCSContactActivity">
+
+        <!-- Add a custom toolbar -->
+        <include layout="@layout/toolbar"/>
+
 
         <TextView
-            android:id="@+id/county_label"
-            android:layout_width="168dp"
-            android:layout_height="40dp"
-            android:text="@string/County"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:text="@string/counties_to_be_updated_soon"
+            android:textSize="11sp"
+            android:layout_marginStart="20dp"
+            />
 
-        <Spinner
-            android:id="@+id/county_spinner"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp" />
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/contact_details_label"
-            android:layout_width="184dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/ContactDetails"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="66dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:context=".CCSContactActivity">
 
-        <TextView
-            android:id="@+id/contact_details_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="105dp"
-            android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/county_label"
+                    android:layout_width="168dp"
+                    android:layout_height="40dp"
+                    android:text="@string/County"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+                <Spinner
+                    android:id="@+id/county_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:popupBackground="#949DCD"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#FFFFFF" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/contact_details_label"
+                    android:layout_width="184dp"
+                    android:layout_height="41dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/ContactDetails"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-<com.google.android.material.navigation.NavigationView
-    android:id="@+id/nav_view"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    app:headerLayout="@layout/nav_header"
-    app:menu="@menu/navigation_menu"/>
+                <TextView
+                    android:id="@+id/contact_details_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="105dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
 
-</androidx.drawerlayout.widget.DrawerLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/navigation_menu"
+            android:background="#FFFFFF"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 </RelativeLayout>

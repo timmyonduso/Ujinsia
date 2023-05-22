@@ -14,11 +14,14 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ujinsia.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
+
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var bottomNavigationView : BottomNavigationView
     private lateinit var drawer: DrawerLayout
     private lateinit var recyclerView: RecyclerView
@@ -27,26 +30,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 //bottom navbar
         bottomNavigationView = findViewById(R.id.bottomNav)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.connect -> {
+                R.id.Homie -> {
                     // Handle the "Home" action
-                    val intent = Intent(this, ConnectActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.connect -> {
+                    // Handle the action
+                    val intent = Intent(this, UserCategoryActivity::class.java)
                     startActivity(intent)
                     true
                 }
                 R.id.infooo -> {
                     // Handle the "Search" action
-                    val intent = Intent(this, LearnActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.Bulletin -> {
-                    // Handle the "Settings" action
                     val intent = Intent(this, LearnActivity::class.java)
                     startActivity(intent)
                     true
@@ -99,7 +103,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
-private val items = listOf(
+    private val items = listOf(
 //    <a target="_blank" href="https://icons8.com/icon/34998/choice">Choice</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
     Item("Get aid", R.drawable.anrepoti,"Submit a confidential report", GetAidActivity::class.java),
 //    <a target="_blank" href="https://icons8.com/icon/114259/school">School</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
@@ -137,7 +141,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
             return true
         }
         R.id.Setto -> {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
             return true
         }
@@ -145,10 +149,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
             val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
             drawerLayout.openDrawer(GravityCompat.START)
         }
-//        R.id.switch_theme -> {
-//            // Handle the switch button click
-//
-//        }
+
 
         else -> return super.onOptionsItemSelected(item)
     }
@@ -185,48 +186,5 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean {
         finish()
     }
 }
-
-
-//private fun toggleDarkMode() {
-//    var isDarkMode = false
-//
-//    isDarkMode = !isDarkMode
-//    AppCompatDelegate.setDefaultNightMode(
-//        if (isDarkMode) {
-//            AppCompatDelegate.MODE_NIGHT_YES
-//        } else {
-//            AppCompatDelegate.MODE_NIGHT_NO
-//        }
-//
-//    )
-//
-//}
-
-//fun switchTheme(activity: AppCompatActivity) {
-//    val isDarkMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
-//    if (isDarkMode) {
-//        // switch to light theme
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//    } else {
-//        // switch to dark theme
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//    }
-//    activity.recreate()
-//}
-
-
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.my_menu, menu)
-//        val myMenuItem = menu?.findItem(R.id.HomeFragment)
-//        myMenuItem?.setOnMenuItemClickListener {
-//            // Handle menu item click here
-//            val intent = Intent(this, GetAidActivity::class.java)
-//            startActivity(intent)
-//            true
-//        }
-//        return super.onCreateOptionsMenu(menu)
-//    }
-
-
 
 

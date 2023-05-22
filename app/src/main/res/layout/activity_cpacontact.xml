@@ -1,9 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00000000"
     tools:context=".CPAContactActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start"
+        tools:context=".CPAContactActivity">
+
+        <include layout="@layout/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".CPAContactActivity">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="280dp"
+                android:layout_height="35dp"
+                android:text="@string/click_on_number_to_access_contact"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.11" />
+
+            <TableLayout
+                android:id="@+id/table_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button2"
+                tools:context=".CPAContactActivity"
+                tools:ignore="UselessParent">
+
+                <!--Table Heading-->
+                <TableRow android:background="@color/green">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/agency"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="3"
+                        android:padding="10sp"
+                        android:text="@string/hotline_toll_free_numbers"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/services"
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
+
+
+                </TableRow>
+
+                <!--        Table Data        -->
+
+                <TableRow tools:context=".CPAContactActivity">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/police_hotline"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/cell_1_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="3"
+                        android:padding="10sp"
+                        android:text="@string/numberssss"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/report_crime_request_ambulance_and_emergency_medical_services"
+                        android:textSize="11sp" />
+
+
+                </TableRow>
+
+                <TableRow tools:context=".CPAContactActivity">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/redcross"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/cell_2_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="3"
+                        android:padding="10sp"
+                        android:text="@string/numbers2"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/report_emergencies_health_response_services_and_e_plus_medical_services"
+                        android:textSize="11sp" />
+
+
+                </TableRow>
+
+                <TableRow tools:context=".CPAContactActivity">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/national_hotline_gbv_victims"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/cell_3_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="3"
+                        android:padding="10sp"
+                        android:text="@string/numbers3"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/report_gbv_cases"
+                        android:textSize="11sp" />
+
+
+                </TableRow>
+
+                <TableRow tools:context=".CPAContactActivity">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/child_line_kenya"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/cell_4_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="3"
+                        android:padding="10sp"
+                        android:text="@string/numbers4"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="4"
+                        android:padding="10sp"
+                        android:text="@string/report_child_abuse"
+                        android:textSize="11sp" />
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/navigation_menu"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>

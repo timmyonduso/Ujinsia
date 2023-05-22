@@ -24,6 +24,33 @@
     <string name="FullName">Full Name</string>
     <string name="Emaheil">Email</string>
     <string name="please_wait">Please wait...</string>
+    <string name="TestCrash">Test Crash</string>
+    <string name="agency">Agency</string>
+    <string name="hotline_toll_free_numbers">HOTLINE</string>
+    <string name="services">SERVICES</string>
+    <string name="click">Click on number to access contact</string>
+    <string name="select">Select your county of residence</string>
+    <string name="more">More counties to be added soon</string>
+    <string name="click_on_number_to_access_contact">Click on number to access contact</string>
+    <string name="police_hotline">Police Hotline</string>
+    <string name="redcross">Redcross</string>
+    <string name="national_hotline_gbv_victims">National hotline GBV victims</string>
+    <string name="child_line_kenya">Child Line Kenya</string>
+    <string name="numberssss">18002250000, 999, 911, 112</string>
+    <string name="report_crime_request_ambulance_and_emergency_medical_services">Report crime, request ambulance and emergency medical services</string>
+    <string name="numbers2">1199, 0700395395, 0738395395</string>
+    <string name="report_emergencies_health_response_services_and_e_plus_medical_services">Report emergencies, health response services, and E-Plus medical services</string>
+    <string name="numbers3">1195</string>
+    <string name="report_gbv_cases">Report GBV cases</string>
+    <string name="numbers4">116, 0722116116(Whatsapp)</string>
+    <string name="report_child_abuse">Report child abuse</string>
+    <string name="clickkkk">Click on number to access contact</string>
+    <string name="counties_to_be_updated_soon">Counties to be updated soon!</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="information_to_be_updated">Information to be updated!</string>
+    <string name="empty">Empty</string>
+    <string name="user_1">Schools</string>
+    <string name="choose_user">Select</string>
 
 
 </resources>

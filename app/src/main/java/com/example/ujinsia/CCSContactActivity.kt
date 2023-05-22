@@ -3,15 +3,12 @@ package com.example.ujinsia
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -24,6 +21,8 @@ class CCSContactActivity : AppCompatActivity(),NavigationView.OnNavigationItemSe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ccscontact)
+
+
 
         val counties = arrayOf("Isiolo", "Samburu", "Marsabit", "Garissa", "Wajir", "Mandera", "Kakamega", "Busia", "Bungoma", "West Pokot", "Homabay", "Migori", "Nandi", "Narok", "Baringo", "Bomet", "Kisii", "Kilifi", "Elgeyo-Marakwet", "Murang'a", "Tana River" , "Turkana", "Kwale", "Kitui", "Kajiado", "Taita Taveta", "Laikipia", "Tharaka Nithi")
         val spinner = findViewById<Spinner>(R.id.county_spinner)
@@ -155,7 +154,7 @@ class CCSContactActivity : AppCompatActivity(),NavigationView.OnNavigationItemSe
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
                 return true
             }
@@ -188,7 +187,7 @@ class CCSContactActivity : AppCompatActivity(),NavigationView.OnNavigationItemSe
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
             }
         }

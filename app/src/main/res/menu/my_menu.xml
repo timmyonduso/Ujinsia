@@ -8,12 +8,12 @@
     android:id="@+id/menuu">
 
 
-<!--    <item android:id="@+id/Homie"-->
-<!--        android:icon="@drawable/ic_baseline_home_24"-->
-<!--        android:title="@string/Homee"-->
-<!--        />-->
+    <item android:id="@+id/Homie"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/Homee"
+        />
 
-<!--    <a target="_blank" href="https://icons8.com/icon/nDMoUPjLMnbO/communicate">Communicate</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
+
     <item
         android:id="@+id/connect"
         android:icon="@drawable/groupss"
@@ -30,11 +30,13 @@
         />
 
 <!--    <a target="_blank" href="https://icons8.com/icon/uh80PIfoLgYI/light-bulb">Light Bulb</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
-    <item android:id="@+id/Bulletin"
-        android:icon="@drawable/newsss"
-        android:title="@string/Bulletin"
-        app:showAsAction="never"
-        />
+<!--    <item android:id="@+id/Bulletin"-->
+<!--        android:icon="@drawable/newsss"-->
+<!--        android:title="@string/Bulletin"-->
+<!--        app:showAsAction="never"-->
+<!--        />-->
+
+
 
 </menu>
 

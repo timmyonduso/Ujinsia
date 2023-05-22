@@ -17,7 +17,9 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding
     private var regName: EditText? = null
     private var regEmail: EditText? = null
+    private var confPassword: EditText? = null
     private var regPassword: EditText? = null
+    private var regLocation: EditText? = null
     private var loginHere: TextView? = null
     private var register: Button? = null
     private var mAuth: FirebaseAuth? = null
@@ -32,6 +34,8 @@ class SignupActivity : AppCompatActivity() {
         regName = findViewById(R.id.inputName)
         regEmail = findViewById(R.id.inputemail)
         regPassword = findViewById(R.id.inputpassword)
+        confPassword = findViewById(R.id.confirm_password)
+        regLocation = findViewById(R.id.inputlocation)
         loginHere = findViewById(R.id.loginInstead)
         register = findViewById(R.id.btn_signup)
 
@@ -54,7 +58,8 @@ class SignupActivity : AppCompatActivity() {
         val name = regName!!.text.toString().trim()
         val email = regEmail!!.text.toString().trim()
         val password = regPassword!!.text.toString().trim()
-
+        val confpassword = confPassword!!.text.toString().trim()
+        val location = regLocation!!.text.toString().trim()
 
         if (name.isEmpty()){
             regName!!.error = "Please provide your full name"
@@ -65,13 +70,15 @@ class SignupActivity : AppCompatActivity() {
         }else if(password.isEmpty()){
             regPassword!!.error = "Password cannot be empty"
             regPassword!!.requestFocus()
+        }else if(confpassword.isEmpty()){
+            confPassword!!.error = "Password cannot be empty"
+            confPassword!!.requestFocus()
+        }else if(location.isEmpty()){
+            regLocation!!.error = "Add your location"
+            regLocation!!.requestFocus()
         }else {
-            mAuth!!.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
-                    task->
+            mAuth!!.createUserWithEmailAndPassword(email,password).addOnCompleteListener{ task->
                 if (task.isSuccessful){
-                    Toast.makeText(this,"User registered successfully",
-                        Toast.LENGTH_LONG).show()
-
                     // Get the user's ID
                     val userId = mAuth!!.currentUser!!.uid
 
@@ -79,7 +86,7 @@ class SignupActivity : AppCompatActivity() {
                     val userData = hashMapOf(
                         "Name" to name,
                         "Email" to email,
-                        "Password" to password
+                        "Location" to location
                     )
 
                     // Store the user's data in the real-time database
@@ -88,11 +95,20 @@ class SignupActivity : AppCompatActivity() {
                         .child(userId)
                         .setValue(userData)
                         .addOnSuccessListener {
-                            Toast.makeText(this, "Data saved successfully", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Data saved successfully", Toast.LENGTH_SHORT).show()
                         }
                         .addOnFailureListener {
-                            Toast.makeText(this, "Data saving failed", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Data saving failed", Toast.LENGTH_SHORT).show()
                         }
+
+                    // Store the user's password in a different path
+                    FirebaseDatabase.getInstance().reference
+                        .child("Passwords")
+                        .child(userId)
+                        .setValue(password)
+
+                    Toast.makeText(this,"User registered successfully",
+                        Toast.LENGTH_LONG).show()
 
                     startActivity(Intent(this,LoginActivity::class.java))
 

@@ -2,7 +2,6 @@ package com.example.ujinsia
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -38,15 +37,11 @@ class GetAidActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelect
         listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position:Int, id:Long ->
 
             if (position== 0) {
-                val intent = Intent(this, FurtherAid::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, FurtherAid::class.java))
+
             }
             if (position==1){
-                val phone = "911"
-
-                val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
-
-                startActivity(intent)
+                startActivity(Intent(this, ConnectActivity::class.java))
             }
 
         }
@@ -94,7 +89,7 @@ class GetAidActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelect
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
                 return true
             }
@@ -127,7 +122,7 @@ class GetAidActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelect
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
             }
         }

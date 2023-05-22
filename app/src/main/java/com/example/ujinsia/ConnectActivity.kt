@@ -1,15 +1,14 @@
 package com.example.ujinsia
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
-import android.net.Uri
-import android.content.Intent
-import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -37,36 +36,19 @@ class ConnectActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelec
         listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position:Int, id:Long ->
 
             if (position==0){
-                val phone = "911"
-
-                val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
-
-                startActivity(intent)
+                startActivity(Intent(this, CPAContactActivity::class.java))
             }
             if (position==1){
-                val intent = Intent(this, CCSContactActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, CCSContactActivity::class.java))
             }
             if (position==2){
-                val phone = "911"
-
-                val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
-
-                startActivity(intent)
+              //add fxn
             }
             if (position==3){
-                val phone = "911"
-
-                val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
-
-                startActivity(intent)
+                //add fxn
             }
             if (position==4){
-                val phone = "911"
-
-                val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
-
-                startActivity(intent)
+                //add fxn
             }
         }
 
@@ -112,7 +94,7 @@ class ConnectActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelec
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
                 return true
             }
@@ -145,7 +127,7 @@ class ConnectActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelec
                 return true
             }
             R.id.Setto -> {
-                val intent = Intent(this, LoginActivity::class.java)
+                val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
             }
         }

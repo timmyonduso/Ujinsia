@@ -1,3 +1,3 @@
 package com.example.ujinsia
 
-data class User(var userName:String ?=null, var userEmail:String ?=null, var userLocation:String ?=null)
+data class User(var Name:String ?=null, var Email:String ?=null, var Location:String ?=null)

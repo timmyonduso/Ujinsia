@@ -9,4 +9,8 @@
     <color name="main">#E0D7D7</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#2196F3</color>
+
+    <color name="lightWhite">#f2f5f8</color>
+    <color name="twhite">#fff</color>
+    <color name="tblack">#000</color>
 </resources>
